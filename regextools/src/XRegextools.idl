@@ -1,0 +1,10 @@
+#include <com/sun/star/uno/XInterface.idl>
+
+module be { module vmalep { module libreoffice { module Regextools {
+
+    interface XRegextools
+    {
+        string regextract( [in] string a, [in] string b, [in] long c);
+    };
+
+}; }; }; };

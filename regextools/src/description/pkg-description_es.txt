@@ -1,0 +1,5 @@
+Una extensión para Calc que añade funciones usando expresiones regulares.
+
+REGEXTRACT extrae parte de una cadena de caracters usando regex
+
+Copyright (c) 2017 Pierre van Male (vmalep@gmail.com)

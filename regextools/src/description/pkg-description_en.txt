@@ -1,0 +1,5 @@
+An extension that adds functions for Calc using regular expressions.
+
+REGEXTRACT Extract part of a string using regex.
+
+Copyright (c) 2017 Pierre van Male (vmalep@gmail.com)

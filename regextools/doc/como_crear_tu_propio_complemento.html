@@ -1,0 +1,49 @@
+<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
+</head>
+<body>
+	<h2 id="como-crear-tu-propio-complemento-para-libreofficeopenoffice">Como crear tu propio complemento para LibreOffice/OpenOffice</h2>
+	<p>Esta guía está pensada para utilizarla en <strong>Ubuntu</strong>, con lo cual todo lo que encontrarás aquí está dirigida a esta distribución. Sin embargo, esto es extensible a otras distribuciones cambiando convenientemente las órdenes a ejecutar en el <em>emulador de terminal</em> e incluso a otros <strong>Sistemas Operativos</strong>, pero esto te llevará algo mas de trabajo.</p>
+	<h3 id="requisitos">Requisitos</h3>
+	<p>Para comenzar, necesitarás tener el <strong>SDK</strong> de <strong>LibreOffice</strong>, para lo cual en un emulador de terminal ejecuta la siguiente orden,</p>
+	<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libreoffice</span><span class="o">-</span><span class="n">dev</span><span class="o">*</span>
+	</pre></div>
+
+
+	<p>Una vez instalado, y para ahorrarte trabajo te recomiendo que te bajes la siguiente plantilla,</p>
+	<h4 id="la-plantilla">La plantilla</h4>
+	<p>En esta plantillas encontrarás un archivo ejecutable <em>make.sh</em>, que es el que se encarga de crear nuestros documentos y un directorio <em>src</em> que contiene todos los archivos y carpetas necesarias para crear nuestro propio complemento.</p>
+	<p>Es importante no modificar la estructura porque de otra manera el ejecutable no los localizará.</p>
+	<p>Dentro de <em>src</em> encontraremos tres directorios y tres archivos. De los directorios indicar,</p>
+	<ul>
+	<li>
+	<p><strong>description</strong> contiene varios archivos con la descripción del complemento en varios idiomas. Son archivos de texto donde debes indicar para que sirve el complemento.</p>
+	</li>
+	<li>
+	<p><strong>icons</strong> aquí se guarda el icono del complemento. Puedes cambiar el icono, pero renómbralo con el mismo del existente.</p>
+	</li>
+	<li>
+	<p><strong>resources</strong> contiene la licencia del complemento en varios idiomas, tal y como sucedía con el directorio <strong>description</strong>.</p>
+	</li>
+	</ul>
+	<p>De los siguientes archivos, empezaremos por</p>
+	<ul>
+	<li>
+	<p><strong>template.py</strong> que es el que contiene las funciones que queremos implementar. Además de la <em>dirección</em> (<em>es.sample</em>libreoffice.Template* que puedes poner la que quieras siempre y cuando la mantengas en todos los sitios), deberás cambiar las funciones en el espacio marcado para ello.</p>
+	</li>
+	<li>
+	<p><strong>XTemplate.idl</strong> es donde describiremos el módulo y las funciones que contiene. Se trata de un archivo muy sencillo e intuitivo.</p>
+	</li>
+	<li>
+	<p><strong>generate_xml</strong> contiene todos los datos del complemento, como la dirección, nombre, descripción, versión, etc. Así como la descripción de las funciones. Solo es necesario modificar las primeras líneas antes de llegar a <em>description.xml</em></p>
+	</li>
+	</ul>
+	<p>Una vez modificados todos estos archivos convenientemente, procurando que las <strong>direcciones</strong> cuadren en todos ellos, es el momento de ejecutar <em>make.sh</em>, que como he indicado en la introducción es el que se encargará de crear el complemento.</p>
+	<p>Interesa ejecutar <em>make.sh</em> directamente desde un <em>emulador de terminal</em> para comprobar que no te arroja ningún fallo, y que todo ha ido correctamente, tal y como se espera.</p>
+	<p>Una vez generado solo te queda instalarlo en tu <strong>LibreOffice</strong> y comprobar que todo funciona correctamente.</p>
+	<h2 id="conclusiones">Conclusiones</h2>
+	<p>A lo mejor al leer este artículo puedes llegar a pensar que es algo complicado crear tu propio complemento para LibreOffice, pero te puedo asegurar que nada mas alejado de la realidad.</p>
+	<p>Lo cierto es que son muy pocos los parámetros a cambiar, aunque ciertamente podían ser todavía menos si le hubiera dedicado algo mas de tiempo al desarrollo del ejecutable, pero sin lugar a dudas es muy sencillo e intuitivo (como he comentado).</p>
+	<p>Te animo a que lo pruebes y hagas tus propias funciones, es algo muy sencillo y que seguro te será de mucha utilidad.</p>
+</body>
